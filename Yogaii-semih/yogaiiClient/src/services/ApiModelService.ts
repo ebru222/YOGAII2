@@ -11,14 +11,14 @@ class ApiModelService {
     try {
       const base64Image = imageData.toDataURL('image/jpeg');
       
-        const response = await fetch('http://192.168.1.10:5000/api/predict', {
+        const response = await fetch('http://127.0.0.1:5000/api/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           image: base64Image // Send the full base64 string including the prefix
-        }),
+        })
       });
 
       if (!response.ok) {

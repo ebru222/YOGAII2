@@ -50,6 +50,20 @@ class ApiService {
       throw error;
     }
   }
+    async login(username: string, password: string): Promise<string> {
+        try {
+            const response = await axios.post(`${API_BASE_URL}/authentication/login`, {
+                username: username,
+                passwordHash: password
+            });
+            return response.data.token;
+        } catch (error: any) {
+            throw error.response?.data || error;
+        }
+    }
+
 }
+
+
 
 export default new ApiService();

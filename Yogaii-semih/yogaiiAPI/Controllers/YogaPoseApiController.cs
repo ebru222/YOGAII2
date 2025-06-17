@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using yogaiiAPI.Models;
-using yogaiiAPI.Services;
+using YogaPoseApi.Models;
+using YogaPoseApi.Services;
 
-namespace yogaiiAPI.Controllers
+namespace YogaPoseApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

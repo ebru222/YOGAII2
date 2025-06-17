@@ -14,7 +14,8 @@ import {
 } from '@mui/material';
 import './App.css';
 
-// Bileşenler oluşturulacak
+const Login = React.lazy(() => import('./components/Login'));
+const Register = React.lazy(() => import('./components/Register'));
 const Home = React.lazy(() => import('./components/Home'));
 const PosesList = React.lazy(() => import('./components/PosesList'));
 const PoseDetail = React.lazy(() => import('./components/PoseDetail'));
@@ -94,7 +95,7 @@ function App() {
                                       marginRight: 8 // yazıdan biraz boşluk olsun
                                   }}
                               />
-                              YogaAI
+                              YogaAII
                           </Link>
                       </Typography>
 
@@ -116,12 +117,14 @@ function App() {
               <Typography>Yükleniyor...</Typography>
             </Box>
           }>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/poses" element={<PosesList />} />
-              <Route path="/poses/:poseName" element={<PoseDetail />} />
-              <Route path="/live" element={<LiveDetection />} />
-            </Routes>
+                      <Routes>
+                          <Route path="/" element={<Register/>} />
+                          <Route path="/login" element={<Login />} />
+                          <Route path="/home" element={<Home />} />
+                          <Route path="/poses" element={<PosesList />} />
+                          <Route path="/poses/:poseName" element={<PoseDetail />} />
+                          <Route path="/live" element={<LiveDetection />} />
+                      </Routes>
           </React.Suspense>
         </Container>
       </Router>

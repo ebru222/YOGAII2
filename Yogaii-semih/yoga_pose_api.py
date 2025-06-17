@@ -13,10 +13,8 @@ import logging
 from datetime import datetime
 import time
 
-# Sınıf isimleri
 CLASSES = ['downdog', 'goddess', 'plank', 'tree', 'warrior2']
 
-# Model dosya yolu
 MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'yoga_pose_model_two.keras')
 
 # Log dosyası yapılandırması
@@ -28,11 +26,11 @@ LOG_FILE = os.path.join(LOG_FOLDER, f'yoga_api_{datetime.now().strftime("%Y%m%d"
 logger = logging.getLogger('yoga_api')
 logger.setLevel(logging.INFO)
 
-# Dosya handler'ı
+# Dosya handler
 file_handler = logging.FileHandler(LOG_FILE)
 file_handler.setLevel(logging.INFO)
 
-# Konsol handler'ı
+# Konsol handler
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)
 
@@ -58,7 +56,7 @@ CORS(app, resources={
 })
 
 # Host ve port ayarları
-HOST = '192.168.1.45'
+HOST = '127.0.0.1'
 PORT = 5000
 
 # Global model değişkeni
@@ -183,7 +181,7 @@ def health_check():
     return jsonify({'status': 'ok', 'message': 'API çalışıyor ve model yüklü'})
 
 if __name__ == '__main__':
-    # API başlatma bilgisini logla
+    # API başlatma log
     logger.info("=== Yoga Pose API Başlatılıyor ===")
     logger.info(f"Host: {HOST}, Port: {PORT}")
     

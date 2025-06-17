@@ -4,9 +4,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using yogaiiAPI.Models;
+using YogaPoseApi.Models;
 
-namespace yogaiiAPI.Services
+namespace YogaPoseApi.Services
 {
     public class YogaPoseApiService
     {
